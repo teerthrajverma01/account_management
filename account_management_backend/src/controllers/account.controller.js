@@ -26,6 +26,22 @@ module.exports.getAllAccount = AsyncHandler(async (req, res) => {
 });
 module.exports.getAccountByAccountNo = AsyncHandler(async (req, res) => {
   try {
+    let account_no = parseInt(req.params.account_no);
+
+    let getAccountByAccountNoResponse =
+      await accountService.getAccountByAccountNoService(account_no);
+    if (getAccountByAccountNoResponse === "FAILURE") {
+      throw new ApiError(500, "Couldnot fetch account with given account_no");
+    }
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          getAccountByAccountNoResponse,
+          "Fetched account detail by account_no"
+        )
+      );
   } catch (error) {
     throw error;
   }
