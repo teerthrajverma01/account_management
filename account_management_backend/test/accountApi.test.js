@@ -149,8 +149,7 @@ describe("accountApi", () => {
   describe("PUT /api/account", () => {
     it("should delete account by account_no", (done) => {
       let data = {
-        account_no: 1357924680135792,
-
+        account_no: 135792468013123,
         address: "501 Pine Street, Hamletville",
         contact_no: "1357924680",
         email_id: "bob2@example.com",

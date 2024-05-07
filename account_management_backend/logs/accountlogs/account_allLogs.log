@@ -5,3 +5,11 @@
 2024-05-07T08:16:15.309Z [account-service] info: getAllAccount ->  Fetched all account detail
 2024-05-07T08:16:15.385Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
 2024-05-07T08:16:15.455Z [account-service] warn: deleteExistingAccount ->  Nothing to delete
+2024-05-07T08:20:25.704Z [account-service] info: getAllAccount ->  Fetched all account detail
+2024-05-07T08:20:25.757Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
+2024-05-07T08:20:25.814Z [account-service] warn: deleteExistingAccount ->  Nothing to delete
+2024-05-07T08:22:34.793Z [account-service] info: addNewAccount ->  Added account Detail 
+2024-05-07T08:22:45.123Z [account-service] info: getAllAccount ->  Fetched all account detail
+2024-05-07T08:22:45.188Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
+2024-05-07T08:22:45.252Z [account-service] warn: deleteExistingAccount ->  Nothing to delete
+2024-05-07T08:23:53.972Z [account-service] info: updateExistingAccount ->  Updated existing account
