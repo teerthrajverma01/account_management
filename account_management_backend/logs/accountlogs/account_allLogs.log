@@ -13,3 +13,9 @@
 2024-05-07T08:22:45.188Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
 2024-05-07T08:22:45.252Z [account-service] warn: deleteExistingAccount ->  Nothing to delete
 2024-05-07T08:23:53.972Z [account-service] info: updateExistingAccount ->  Updated existing account
+2024-05-07T10:41:33.263Z [account-service] info: getAllAccount ->  Fetched all account detail
+2024-05-07T10:41:40.724Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
+2024-05-07T10:42:05.915Z [account-service] error: addNewAccount ->  Couldnot add account detail to database
+2024-05-07T10:43:21.798Z [account-service] info: addNewAccount ->  Added account Detail 
+2024-05-07T10:43:57.965Z [account-service] warn: updateExistingAccount ->  Nothing to update
+2024-05-07T10:44:09.298Z [account-service] info: deleteExistingAccount ->  Deleted existing account
