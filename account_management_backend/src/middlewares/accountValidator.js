@@ -27,3 +27,4 @@ const accountValidator = [
       return true;
     }),
 ];
+module.exports = accountValidator;

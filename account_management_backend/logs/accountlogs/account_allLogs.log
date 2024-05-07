@@ -2,3 +2,6 @@
 2024-05-07T07:49:31.863Z [account-service] info: getAllAccount ->  Fetched all account detail
 2024-05-07T07:52:58.279Z [account-service] info: getAllAccount ->  Fetched all account detail
 2024-05-07T07:52:58.348Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
+2024-05-07T08:16:15.309Z [account-service] info: getAllAccount ->  Fetched all account detail
+2024-05-07T08:16:15.385Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
+2024-05-07T08:16:15.455Z [account-service] warn: deleteExistingAccount ->  Nothing to delete
