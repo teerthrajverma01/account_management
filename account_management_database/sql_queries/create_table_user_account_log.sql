@@ -1,0 +1,9 @@
+ DROP TABLE IF EXISTS account_logs;
+ CREATE TABLE IF NOT EXISTS account_logs (
+ id INT NOT NULL AUTO_INCREMENT,
+`timestamp` DATETIME NOT NULL,
+label VARCHAR(2048) NOT NULL DEFAULT "account_service",
+log_level VARCHAR(16) NOT NULL,
+message VARCHAR(1024) NOT NULL,
+`metadata` VARCHAR(2048) NOT NULL,
+ PRIMARY KEY (id));
