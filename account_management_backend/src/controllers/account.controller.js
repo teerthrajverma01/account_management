@@ -6,6 +6,20 @@ const accountService = require("../services/account.service");
 
 module.exports.getAllAccount = AsyncHandler(async (req, res) => {
   try {
+    let getAllAccountResponse = await accountService.getAllAccountService();
+    if (getAllAccountResponse === "FAILURE") {
+      throw new ApiError(500, "couldnot fetch all account info from database");
+    }
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          getAllAccountResponse,
+          "Fetched all account detail"
+        )
+      );
   } catch (error) {
     throw error;
   }
