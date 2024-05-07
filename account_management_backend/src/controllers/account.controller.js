@@ -64,6 +64,23 @@ module.exports.addNewAccount = AsyncHandler(async (req, res) => {
 });
 module.exports.updateExistingAccount = AsyncHandler(async (req, res) => {
   try {
+    let data = req.body;
+
+    let updateExistingAccountResponse =
+      await accountService.updateExistingAccountService(data);
+    if (updateExistingAccountResponse === "FAILURE") {
+      throw new ApiError(500, "Couldnot update existing account");
+    }
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          updateExistingAccountResponse,
+          "Updated existing account"
+        )
+      );
   } catch (error) {
     throw error;
   }
