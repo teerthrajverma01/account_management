@@ -21,7 +21,7 @@ app.use(express.static("public"));
 //Api Routes
 // account router
 const accountRouter = require("./src/routes/account.routes");
-app.use("/api/admin/", accountRouter);
+app.use("/api/", accountRouter);
 
 // **************************************************************
 
