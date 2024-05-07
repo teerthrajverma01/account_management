@@ -6,6 +6,8 @@ const accountLogger = require("../logger/account_logger/index");
 
 const accountService = require("../services/account.service");
 
+const { validationResult } = require("express-validator");
+
 module.exports.getAllAccount = AsyncHandler(async (req, res) => {
   try {
     let getAllAccountResponse = await accountService.getAllAccountService();
@@ -61,6 +63,18 @@ module.exports.getAccountByAccountNo = AsyncHandler(async (req, res) => {
 });
 module.exports.addNewAccount = AsyncHandler(async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const formattedErrors = [];
+      errors
+        .array()
+        .map((err) => formattedErrors.push({ [err.path]: err.msg }));
+
+      return res.status(422).json({
+        success: false,
+        errors: formattedErrors,
+      });
+    }
     let data = req.body;
 
     let addResponseData = await accountService.addNewAccountService(data);
@@ -81,6 +95,18 @@ module.exports.addNewAccount = AsyncHandler(async (req, res) => {
 });
 module.exports.updateExistingAccount = AsyncHandler(async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const formattedErrors = [];
+      errors
+        .array()
+        .map((err) => formattedErrors.push({ [err.path]: err.msg }));
+
+      return res.status(422).json({
+        success: false,
+        errors: formattedErrors,
+      });
+    }
     let data = req.body;
 
     let updateExistingAccountResponse =

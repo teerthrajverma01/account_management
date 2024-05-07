@@ -1,0 +1,4 @@
+2024-05-07T07:48:40.408Z [account-service] error: addNewAccount ->  Couldnot add account detail to database
+2024-05-07T07:49:31.863Z [account-service] info: getAllAccount ->  Fetched all account detail
+2024-05-07T07:52:58.279Z [account-service] info: getAllAccount ->  Fetched all account detail
+2024-05-07T07:52:58.348Z [account-service] info: getAccountByAccountNo ->  Fetched account detail by account_no
