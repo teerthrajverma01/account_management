@@ -71,7 +71,17 @@ module.exports.updateExistingAccount = AsyncHandler(async (req, res) => {
     if (updateExistingAccountResponse === "FAILURE") {
       throw new ApiError(500, "Couldnot update existing account");
     }
-
+    if (updateExistingAccountResponse === 0) {
+      return res
+        .status(200)
+        .json(
+          new ApiResponse(
+            200,
+            updateExistingAccountResponse,
+            "Nothing to update"
+          )
+        );
+    }
     return res
       .status(200)
       .json(
@@ -87,6 +97,34 @@ module.exports.updateExistingAccount = AsyncHandler(async (req, res) => {
 });
 module.exports.deleteExistingAccount = AsyncHandler(async (req, res) => {
   try {
+    let account_no = parseInt(req.params.account_no);
+
+    let deleteExistingAccountResponse = await accountService.deleteExistingRoom(
+      account_no
+    );
+    if (deleteExistingAccountResponse === "FAILURE") {
+      throw new ApiError(500, "Couldnot delete existing account");
+    }
+    if (deleteExistingAccountResponse === 0) {
+      return res
+        .status(200)
+        .json(
+          new ApiResponse(
+            200,
+            deleteExistingAccountResponse,
+            "Nothing to delete"
+          )
+        );
+    }
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          deleteExistingAccountResponse,
+          "Deleted existing account"
+        )
+      );
   } catch (error) {
     throw error;
   }
